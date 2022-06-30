@@ -1,0 +1,15 @@
+키보드와 마우스를 컨트롤하는 매크로
+
+pip install pyautogui pillow pyperclip
+import pywinmacro as pw
+
+# 지금 마우스가 있는 위치를 location이라고 지정하는 코드
+location = pw.get_mouse_position()
+
+# 로케이션 더블 클릭
+for i in range(2):
+     pw.click(location)
+
+# 로케이션이라는 지점으로 이동 후 클릭(메모장 활성화) 그 후 "메모장에 글씨 쓰기"라는 글 입력
+pw.click(location); pw.type_in("메모장에 글씨 쓰기")
+자동 로그인으로 사용할 수 있을 것 같다.
