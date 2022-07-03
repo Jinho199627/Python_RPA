@@ -56,3 +56,27 @@
         <div class = "info_group">뉴스 목록</div>   선택자: .info_group
     자식 선택자: 원하는 태그에 별명이 없을 때 사용한다. 별명이 없을 땐 부모 클래스를 활용한다.
         <div class = "logo_sports"><span>스포츠</span></div>    선택자: .logo_sports>span
+
+<뉴스 제목 + 링크 크롤링>
+    웹페이지에서 필요한 태그를 알아보는 방법
+        돋보기 창에서 필요한 부분을 선택
+            id가 있으면 id로
+            class가 있으면 class로 할 건데
+            이게 고유한 것인지 확인해야 한다.
+            id는 #을 앞에 붙여서 검색하고(검색 방법은 Ctrl + F이다.)
+            class는 .을 앞에 붙여서 검색한다.
+
+<검색어에 따라 다른 결과를 나타내기>
+    URL : 인터넷 주소 형식
+    Protocol(//전까지) - Domain(/전까지) - Path(?전까지) - Parameter(?이후) (4가지 파트로 구분됨)
+    크롤링에선 Parameter가 중요하다. where=news&query=삼성전자
+                                    키     값  쿼리   값
+    쿼리는 검색어어 해당. 즉 쿼리 값을 input_value로 받아서 바꿔주면 검색어에 따라 크롤링 결과값을 바꿀 수 있다.
+    pyautogui 설치(입력 팝업창을 위해) pip install pyautogui
+
+<여러 페이지 결과 모두 가져오기>
+    네이버 뉴스의 경우
+    1page : start=1
+    2page : start=11
+    3page : start=21
+    이런 식으로 전개
